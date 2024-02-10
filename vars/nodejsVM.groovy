@@ -8,7 +8,7 @@ def call(Map configMap){
         environment { 
             packageVersion = ''
             // can maintain in pipeline globals
-            //nexusURL = '172.31.5.95:8081'
+             nexusURL = '172.31.2.149:8081'
         }
         options {
             timeout(time: 1, unit: 'HOURS')
@@ -76,7 +76,7 @@ def call(Map configMap){
                         groupId: 'com.roboshop',
                         version: "${packageVersion}",
                         repository: "${configMap.component}",
-                        credentialsId: 'nexus-auth',
+                        credentialsId: 'nexus_auth',
                         artifacts: [
                             [artifactId: "${configMap.component}",
                             classifier: '',
